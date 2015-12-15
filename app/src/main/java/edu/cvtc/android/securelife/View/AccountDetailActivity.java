@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.PersistableBundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -308,6 +309,78 @@ public class AccountDetailActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         startActivity(intent);
         overridePendingTransition(0, 0);
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+
+        super.onSaveInstanceState(outState, outPersistentState);
+
+        outState.putInt("detailType", detailType);
+
+        outState.putInt(AccountTable.ACCOUNT_ID_KEY, account.getAccountId());
+        outState.putString(AccountTable.FRIENDLY_NAME_KEY, account.getFriendlyName());
+        outState.putString(AccountTable.TYPE_KEY, account.getType());
+        outState.putString(AccountTable.URL_KEY, account.getUrl());
+        outState.putString(AccountTable.EMAIL_KEY, account.getEmail());
+        outState.putString(AccountTable.USERNAME_KEY, account.getUsername());
+        outState.putString(AccountTable.PASSWORD_KEY, account.getPassword());
+        outState.putString(AccountTable.SECRET_QUESTION_KEY, account.getSecretQuestion());
+        outState.putString(AccountTable.SECRET_ANSWER_KEY, account.getSecretAnswer());
+        outState.putString(AccountTable.NOTES_KEY, account.getNotes());
+        outState.putString(AccountTable.BUSINESS_NAME_KEY, account.getBusinessName());
+        outState.putString(AccountTable.BUSINESS_ADDRESS_KEY, account.getBusinessAddress());
+        outState.putString(AccountTable.BUSINESS_CITY_KEY, account.getBusinessCity());
+        outState.putString(AccountTable.BUSINESS_STATE_KEY, account.getBusinessState());
+        outState.putString(AccountTable.BUSINESS_ZIP_KEY, account.getBusinessZip());
+        outState.putString(AccountTable.BUSINESS_PHONE_NUMBER_KEY, account.getBusinessPhoneNumber());
+        outState.putString(AccountTable.BUSINESS_CONTACT_KEY, account.getBusinessContact());
+        outState.putString(AccountTable.ACCT_NUMBER_KEY, account.getAcctNumber());
+        outState.putString(AccountTable.ROUTING_NUMBER_KEY, account.getRoutingNumber());
+        outState.putString(AccountTable.EXPIRATION_DATE_KEY, account.getExpirationDate());
+        outState.putString(AccountTable.CVV_NUMBER_KEY, account.getCvvNumber());
+        outState.putString(AccountTable.AVATAR_KEY, account.getAvatar());
+        outState.putString(AccountTable.IMAGE_URI_KEY, account.getImageUri());
+        outState.putString(AccountTable.SERIAL_NUMBER_KEY, account.getSerialNumber());
+        outState.putString(AccountTable.STORAGE_SIZE_KEY, account.getStorageSize());
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+
+        super.onRestoreInstanceState(savedInstanceState);
+
+        detailType = savedInstanceState.getInt("detailType");
+
+        account.setAccountId(savedInstanceState.getInt(AccountTable.ACCOUNT_ID_KEY));
+        account.setFriendlyName(savedInstanceState.getString(AccountTable.FRIENDLY_NAME_KEY));
+        account.setType(savedInstanceState.getString(AccountTable.TYPE_KEY));
+        account.setUrl(savedInstanceState.getString(AccountTable.URL_KEY));
+        account.setEmail(savedInstanceState.getString(AccountTable.EMAIL_KEY));
+        account.setUsername(savedInstanceState.getString(AccountTable.USERNAME_KEY));
+        account.setPassword(savedInstanceState.getString(AccountTable.PASSWORD_KEY));
+        account.setSecretQuestion(savedInstanceState.getString(AccountTable.SECRET_QUESTION_KEY));
+        account.setSecretAnswer(savedInstanceState.getString(AccountTable.SECRET_ANSWER_KEY));
+        account.setNotes(savedInstanceState.getString(AccountTable.NOTES_KEY));
+        account.setBusinessName(savedInstanceState.getString(AccountTable.BUSINESS_NAME_KEY));
+        account.setBusinessAddress(savedInstanceState.getString(AccountTable.BUSINESS_ADDRESS_KEY));
+        account.setBusinessCity(savedInstanceState.getString(AccountTable.BUSINESS_CITY_KEY));
+        account.setBusinessState(savedInstanceState.getString(AccountTable.BUSINESS_STATE_KEY));
+        account.setBusinessZip(savedInstanceState.getString(AccountTable.BUSINESS_ZIP_KEY));
+        account.setBusinessPhoneNumber(savedInstanceState.getString(AccountTable.BUSINESS_PHONE_NUMBER_KEY));
+        account.setBusinessContact(savedInstanceState.getString(AccountTable.BUSINESS_CONTACT_KEY));
+        account.setAcctNumber(savedInstanceState.getString(AccountTable.ACCT_NUMBER_KEY));
+        account.setRoutingNumber(savedInstanceState.getString(AccountTable.ROUTING_NUMBER_KEY));
+        account.setExpirationDate(savedInstanceState.getString(AccountTable.EXPIRATION_DATE_KEY));
+        account.setCvvNumber(savedInstanceState.getString(AccountTable.CVV_NUMBER_KEY));
+        account.setAvatar(savedInstanceState.getString(AccountTable.AVATAR_KEY));
+        account.setImageUri(savedInstanceState.getString(AccountTable.IMAGE_URI_KEY));
+        account.setSerialNumber(savedInstanceState.getString(AccountTable.SERIAL_NUMBER_KEY));
+        account.setStorageSize(savedInstanceState.getString(AccountTable.STORAGE_SIZE_KEY));
+
+        reloadActivity(detailType);
     }
 
 }

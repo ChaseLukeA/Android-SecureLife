@@ -174,13 +174,12 @@ public class AccountFieldViewHelper {
                         account.getFriendlyName()
                 );
             case AccountTable.TYPE_COL:
-                AccountField af = new AccountField(
+                // TODO: change return here to include setSpinner(true)
+                return new AccountField(
                         TYPE_LABEL,
                         TYPE_EXAMPLE,
                         account.getType()
                 );
-                af.setSpinner(true);
-                return af;
             case AccountTable.URL_COL:
                 return new AccountField(
                         URL_LABEL,

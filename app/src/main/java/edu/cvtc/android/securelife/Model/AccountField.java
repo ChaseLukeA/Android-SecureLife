@@ -11,14 +11,6 @@ public class AccountField {
     private boolean spinner;
 
 
-    // partial constructor for setting AccountField information to create new accounts
-//    public AccountField(String key, String value) {
-//
-//        this.key = key;
-//        this.value = value;
-//    }
-
-
     // partial constructor for setting AccountField labels, hints, etc
     public AccountField(String label, String example, String value) {
 

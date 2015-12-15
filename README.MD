@@ -8,3 +8,15 @@ I currently save all my important information in an Excel spreadsheet and wanted
 ###Details
 I'm using AppCompat v7 for supporting ActionBar, Toolbar, etc all the way from Android Lollipop back to Gingerbread 2.3.6.
 
+###To Do:
+*Finish implementing Spinner View for Account Types
+*Add a Users database so multiple users can have their own SQLite database files of Accounts
+*Implement security and the possibility of a User having their database stored online instead of on their device
+
+###Screenshots
+![main activity](screenshot_01.jpg)
+![summary activity](screenshot_02.jpg)
+![detail activity](screenshot_03.jpg)
+![detail edit activity](screenshot_04.jpg)
+![detail add activity](screenshot_05.jpg)
+![search activity](screenshot_06.jpg)

@@ -1,12 +1,12 @@
 package edu.cvtc.android.securelife.Helper;
 
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import edu.cvtc.android.securelife.Model.AccountTable;
+
 
 public class AccountDatabaseHelper extends SQLiteOpenHelper {
 

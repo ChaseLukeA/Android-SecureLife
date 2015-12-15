@@ -1,6 +1,5 @@
 package edu.cvtc.android.securelife.Model;
 
-
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
@@ -10,7 +9,6 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -18,7 +16,6 @@ import java.util.HashSet;
 import edu.cvtc.android.securelife.Helper.AccountDatabaseHelper;
 import edu.cvtc.android.securelife.R;
 import edu.cvtc.android.securelife.View.AccountSummaryActivity;
-import edu.cvtc.android.securelife.View.SearchActivity;
 
 
 public class AccountContentProvider extends ContentProvider {

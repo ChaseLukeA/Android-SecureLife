@@ -10,9 +10,7 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +20,7 @@ import android.widget.Toast;
 import edu.cvtc.android.securelife.Controller.AccountCursorAdapter;
 import edu.cvtc.android.securelife.Model.AccountContentProvider;
 import edu.cvtc.android.securelife.R;
+
 
 public class AccountSummaryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -55,6 +54,7 @@ public class AccountSummaryActivity extends AppCompatActivity implements LoaderM
 
         this.accountCursorAdapter = new AccountCursorAdapter(this, null, 0);
 
+        sortValue = SORT_BY_NAME;
 
         searchTerm = getIntent().getStringExtra("searchTerm");
         if (null != searchTerm && !searchTerm.isEmpty()) {

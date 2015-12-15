@@ -1,24 +1,16 @@
 package edu.cvtc.android.securelife.View;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
-import edu.cvtc.android.securelife.Helper.AccountFieldViewHelper;
 import edu.cvtc.android.securelife.Model.AccountField;
-import edu.cvtc.android.securelife.Model.AccountType;
 import edu.cvtc.android.securelife.R;
 
 
@@ -63,6 +55,8 @@ public class AccountFieldView extends LinearLayout implements OnItemSelectedList
 
         fieldTextView.setText(accountField.getLabel());
 
+        // TODO: 12/14/15 implement the spinner and populate its values from AccountFieldViewHelper
+        /*
         if (accountField.isSpinner()) {
 
             fieldEditText.setVisibility(View.GONE);
@@ -71,10 +65,10 @@ public class AccountFieldView extends LinearLayout implements OnItemSelectedList
             fieldSpinner.setOnItemSelectedListener(this);
 
 
+            // figuring out how to get the values of each declared field
             final Field[] typeOfAccounts = AccountType.class.getDeclaredFields();
             for (Field type : typeOfAccounts) {
                 Log.d("typeOfAccount ", type.getName());
-
             }
 
 
@@ -82,8 +76,8 @@ public class AccountFieldView extends LinearLayout implements OnItemSelectedList
 
             for (int type = 0; type < AccountType.class.getDeclaredFields().length; type++) {
                 types.add(String.valueOf(type));
-//                types.add(value);
-//                fieldEditText.setHint(value_descr);
+            //    types.add(value_label);
+            //    fieldEditText.setHint(value_example);
             }
 
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this.context, android.R.layout.simple_spinner_item, types);
@@ -91,7 +85,7 @@ public class AccountFieldView extends LinearLayout implements OnItemSelectedList
             fieldSpinner.setAdapter(dataAdapter);
 
         }
-        else { // accountField is a normal TextEdit
+        else { // accountField is a normal TextEdit  */
 
             fieldEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
@@ -105,7 +99,7 @@ public class AccountFieldView extends LinearLayout implements OnItemSelectedList
             });
             fieldEditText.setHint(accountField.getExample());
             fieldEditText.setText(accountField.getValue());
-        }
+        //}
 
         if (!accountField.isEditable()) {
 
