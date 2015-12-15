@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/main_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main_welcome_message"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="25dp"
+        android:layout_above="@+id/main_app_name"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/main_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main_app_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50dp"
+        android:layout_above="@+id/main_account_list_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/main_account_list_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:padding="20dp"
+        android:text="@string/activity_main_button"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/main_motto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_account_list_button"
+        android:text="@string/activity_main_motto"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:textStyle="italic" />
+
+</RelativeLayout>
